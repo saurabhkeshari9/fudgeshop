@@ -1,4 +1,12 @@
-const API_BASE = '/api';
+const getApiBase = (): string => {
+  const envUrl = (import.meta as any).env?.VITE_API_URL;
+  if (envUrl && typeof envUrl === 'string') {
+    return `${envUrl.replace(/\/+$/, '')}/api`;
+  }
+  return '/api';
+};
+
+const API_BASE = getApiBase();
 
 export class ApiError extends Error {
   statusCode?: number;
