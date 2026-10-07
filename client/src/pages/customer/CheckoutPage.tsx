@@ -415,7 +415,7 @@ export const CheckoutPage: React.FC = () => {
 
             <div className="space-y-3">
               <label
-                className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition ${
+                className={`flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:p-4 rounded-xl border-2 cursor-pointer transition gap-2 ${
                   formData.shippingMethod === 'standard'
                     ? 'border-caramel-600 bg-caramel-50/40'
                     : 'border-cream-200 bg-cream-100'
@@ -427,24 +427,24 @@ export const CheckoutPage: React.FC = () => {
                     name="shippingMethod"
                     checked={formData.shippingMethod === 'standard'}
                     onChange={() => setFormData({ ...formData, shippingMethod: 'standard' })}
-                    className="accent-caramel-600 w-4 h-4"
+                    className="accent-caramel-600 w-4 h-4 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-bold text-sm text-chocolate-900">
+                    <div className="font-bold text-xs sm:text-sm text-chocolate-900">
                       Australia Post Standard (Insulated Parcel)
                     </div>
-                    <div className="text-xs text-chocolate-500">
+                    <div className="text-[11px] sm:text-xs text-chocolate-500">
                       Estimated 3–5 business days nationwide
                     </div>
                   </div>
                 </div>
-                <span className="font-bold text-sm text-chocolate-900">
+                <span className="font-bold text-xs sm:text-sm text-chocolate-900 pl-7 sm:pl-0">
                   {isFreeStandard ? 'FREE' : '$12.50 AUD'}
                 </span>
               </label>
 
               <label
-                className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition ${
+                className={`flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:p-4 rounded-xl border-2 cursor-pointer transition gap-2 ${
                   formData.shippingMethod === 'express'
                     ? 'border-caramel-600 bg-caramel-50/40'
                     : 'border-cream-200 bg-cream-100'
@@ -456,18 +456,18 @@ export const CheckoutPage: React.FC = () => {
                     name="shippingMethod"
                     checked={formData.shippingMethod === 'express'}
                     onChange={() => setFormData({ ...formData, shippingMethod: 'express' })}
-                    className="accent-caramel-600 w-4 h-4"
+                    className="accent-caramel-600 w-4 h-4 flex-shrink-0"
                   />
                   <div>
-                    <div className="font-bold text-sm text-chocolate-900">
+                    <div className="font-bold text-xs sm:text-sm text-chocolate-900">
                       Australia Post Express (Priority Chill Packaging)
                     </div>
-                    <div className="text-xs text-chocolate-500">
+                    <div className="text-[11px] sm:text-xs text-chocolate-500">
                       Estimated 1–2 business days nationwide
                     </div>
                   </div>
                 </div>
-                <span className="font-bold text-sm text-chocolate-900">$16.50 AUD</span>
+                <span className="font-bold text-xs sm:text-sm text-chocolate-900 pl-7 sm:pl-0">$16.50 AUD</span>
               </label>
             </div>
           </div>

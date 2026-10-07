@@ -112,7 +112,7 @@ export const CustomerProfilePage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main Profile & Address Card */}
-          <div className="lg:col-span-8 bg-cream-50 p-6 sm:p-8 rounded-3xl border border-cream-300 shadow-artisan space-y-6">
+          <div className="lg:col-span-8 bg-cream-50 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-cream-300 shadow-artisan space-y-6">
             <div className="flex items-center justify-between border-b border-cream-200 pb-4">
               <div>
                 <h2 className="font-serif text-2xl font-bold text-chocolate-950 flex items-center gap-2">
@@ -189,7 +189,7 @@ export const CustomerProfilePage: React.FC = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div className="space-y-1">
                     <label className="text-xs font-bold uppercase tracking-wider text-chocolate-700">
                       City / Suburb
@@ -243,7 +243,7 @@ export const CustomerProfilePage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="px-6 py-3 bg-chocolate-900 text-cream-50 hover:bg-caramel-700 font-bold text-sm rounded-xl shadow-artisan transition flex items-center gap-2 disabled:opacity-60"
+                  className="w-full sm:w-auto px-6 py-3 bg-chocolate-900 text-cream-50 hover:bg-caramel-700 font-bold text-sm rounded-xl shadow-artisan transition flex items-center justify-center gap-2 disabled:opacity-60"
                 >
                   {saving ? (
                     <div className="w-4 h-4 border-2 border-cream-50 border-t-transparent rounded-full animate-spin" />
@@ -257,7 +257,7 @@ export const CustomerProfilePage: React.FC = () => {
           </div>
 
           {/* Password & Security Card */}
-          <div className="lg:col-span-4 bg-cream-50 p-6 sm:p-8 rounded-3xl border border-cream-300 shadow-artisan space-y-6">
+          <div className="lg:col-span-4 bg-cream-50 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-cream-300 shadow-artisan space-y-6">
             <div className="border-b border-cream-200 pb-4">
               <h2 className="font-serif text-xl font-bold text-chocolate-950 flex items-center gap-2">
                 <Lock className="w-5 h-5 text-caramel-700" />

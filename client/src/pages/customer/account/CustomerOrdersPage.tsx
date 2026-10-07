@@ -137,9 +137,9 @@ export const CustomerOrdersPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 sm:text-right">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between sm:justify-end gap-3 sm:gap-4 sm:text-right pt-2 sm:pt-0">
                     <div>
-                      <div className="text-xs text-chocolate-500 uppercase tracking-wider font-semibold">
+                      <div className="text-[10px] sm:text-xs text-chocolate-500 uppercase tracking-wider font-semibold">
                         Total Amount
                       </div>
                       <div className="font-serif text-lg sm:text-xl font-bold text-chocolate-950">
@@ -149,7 +149,7 @@ export const CustomerOrdersPage: React.FC = () => {
 
                     <Link
                       to={`/account/orders/${order.orderNumber}`}
-                      className="px-4 py-2 bg-cream-200 hover:bg-cream-300 text-chocolate-900 font-bold text-xs rounded-xl border border-cream-300 transition flex items-center gap-1.5"
+                      className="px-3.5 sm:px-4 py-2 bg-cream-200 hover:bg-cream-300 text-chocolate-900 font-bold text-xs rounded-xl border border-cream-300 transition flex items-center justify-center gap-1.5"
                     >
                       <span>View Details & Receipt</span>
                       <ArrowRight className="w-3.5 h-3.5 text-caramel-700" />

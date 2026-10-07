@@ -184,8 +184,8 @@ export const CustomerOrderDetailPage: React.FC = () => {
             <h2 className="text-xs font-bold uppercase tracking-wider text-chocolate-700">
               Purchased Artisan Delicacies ({order.items.reduce((s, i) => s + i.quantity, 0)})
             </h2>
-            <div className="border border-cream-200 rounded-2xl overflow-hidden bg-cream-50">
-              <table className="w-full text-left text-sm">
+            <div className="border border-cream-200 rounded-2xl overflow-x-auto bg-cream-50">
+              <table className="w-full min-w-[540px] text-left text-sm">
                 <thead className="bg-cream-200/60 text-xs font-bold uppercase tracking-wider text-chocolate-700 border-b border-cream-200">
                   <tr>
                     <th className="py-3 px-4">Flavour / Item</th>

@@ -77,28 +77,28 @@ export const OrderConfirmationPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       {/* Success Banner */}
-      <div className="bg-cream-100 p-8 sm:p-10 rounded-3xl border border-cream-300 text-center space-y-4 shadow-artisan">
+      <div className="bg-cream-100 p-5 sm:p-10 rounded-3xl border border-cream-300 text-center space-y-4 shadow-artisan">
         <div className="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full mx-auto flex items-center justify-center shadow-inner">
           <CheckCircle2 className="w-10 h-10" />
         </div>
         <span className="text-xs uppercase tracking-widest font-bold text-caramel-700 block">
           Order Placed Successfully
         </span>
-        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-chocolate-950">
+        <h1 className="font-serif text-2xl sm:text-4xl font-bold text-chocolate-950">
           Thank you, {order.customer.firstName}!
         </h1>
         <p className="text-sm text-chocolate-600 max-w-lg mx-auto">
           Your sweet delicacies have been received at our Hahndorf confectionery kitchen. We have sent confirmation details to{' '}
-          <strong className="text-chocolate-900">{order.customer.email}</strong>.
+          <strong className="text-chocolate-900 break-all">{order.customer.email}</strong>.
         </p>
-        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-xl bg-cream-50 border border-cream-300 shadow-sm font-mono text-sm font-bold text-chocolate-900">
+        <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 sm:px-5 py-2.5 rounded-xl bg-cream-50 border border-cream-300 shadow-sm font-mono text-xs sm:text-sm font-bold text-chocolate-900 max-w-full">
           <span>Order Number:</span>
-          <span className="text-caramel-800">{order.orderNumber}</span>
+          <span className="text-caramel-800 break-all">{order.orderNumber}</span>
         </div>
       </div>
 
       {/* Printable Receipt Card */}
-      <div className="bg-cream-50 rounded-3xl border border-cream-300 shadow-artisan p-6 sm:p-10 space-y-8">
+      <div className="bg-cream-50 rounded-3xl border border-cream-300 shadow-artisan p-4 sm:p-8 md:p-10 space-y-8">
         {/* Top Info Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-cream-200 gap-4">
           <div className="space-y-1">
@@ -167,8 +167,8 @@ export const OrderConfirmationPage: React.FC = () => {
           <h3 className="font-serif text-lg font-bold text-chocolate-900">Purchased Confectionery</h3>
           <div className="divide-y divide-cream-200 border-y border-cream-200">
             {order.items.map((item, idx) => (
-              <div key={idx} className="py-3 flex items-center justify-between gap-4 text-sm">
-                <div className="flex items-center gap-3">
+              <div key={idx} className="py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm">
+                <div className="flex items-center gap-3 min-w-0 w-full sm:w-auto">
                   {item.image && (
                     <img
                       src={item.image}
@@ -176,14 +176,14 @@ export const OrderConfirmationPage: React.FC = () => {
                       className="w-12 h-12 object-cover rounded-lg bg-cream-200 border border-cream-300 flex-shrink-0"
                     />
                   )}
-                  <div>
-                    <div className="font-bold text-chocolate-950">{item.name}</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="font-bold text-chocolate-950 truncate">{item.name}</div>
                     <div className="text-xs text-chocolate-500">
                       SKU: {item.sku} • Qty: {item.quantity} × ${item.price.toFixed(2)}
                     </div>
                   </div>
                 </div>
-                <span className="font-bold text-chocolate-900">
+                <span className="font-bold text-chocolate-900 self-end sm:self-center">
                   ${item.subtotal.toFixed(2)} AUD
                 </span>
               </div>

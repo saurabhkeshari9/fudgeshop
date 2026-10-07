@@ -20,7 +20,7 @@ export const VisitUsPage: React.FC = () => {
       {/* Main Info Card & Map Preview */}
       <div className="bg-cream-50 rounded-3xl border border-cream-300 shadow-artisan overflow-hidden grid grid-cols-1 lg:grid-cols-12">
         {/* Info Column */}
-        <div className="lg:col-span-6 p-8 sm:p-12 space-y-8">
+        <div className="lg:col-span-6 p-5 sm:p-8 md:p-12 space-y-6 sm:space-y-8">
           <div className="space-y-3">
             <span className="text-xs font-bold uppercase tracking-wider text-caramel-700">
               Store Information
@@ -63,7 +63,7 @@ export const VisitUsPage: React.FC = () => {
               <Mail className="w-5 h-5 text-caramel-700 flex-shrink-0 mt-0.5" />
               <div>
                 <strong className="block text-chocolate-950">Email Inquiries:</strong>
-                <a href="mailto:contact@fudgeshophahndorf.com.au" className="hover:text-caramel-700 transition">
+                <a href="mailto:contact@fudgeshophahndorf.com.au" className="hover:text-caramel-700 transition break-all">
                   contact@fudgeshophahndorf.com.au
                 </a>
               </div>
@@ -85,7 +85,7 @@ export const VisitUsPage: React.FC = () => {
         </div>
 
         {/* Visual / Map Representation */}
-        <div className="lg:col-span-6 bg-cream-200 min-h-[350px] relative">
+        <div className="lg:col-span-6 bg-cream-200 min-h-[240px] sm:min-h-[350px] relative">
           <img
             src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
             alt="The Fudge Shop in Hahndorf"

@@ -19,7 +19,7 @@ export const AboutPage: React.FC = () => {
       </div>
 
       {/* Main Image Banner */}
-      <div className="rounded-3xl overflow-hidden shadow-artisan-lg border border-cream-300 aspect-[21/9] bg-cream-200">
+      <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-artisan-lg border border-cream-300 aspect-[16/9] sm:aspect-[21/9] bg-cream-200">
         <img
           src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=1600&auto=format&fit=crop"
           alt="Artisan copper pan fudge making"

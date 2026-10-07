@@ -34,7 +34,7 @@ export const ContactPage: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left Column: Direct Details */}
-        <div className="lg:col-span-5 bg-cream-50 p-8 rounded-3xl border border-cream-300 shadow-artisan space-y-8">
+        <div className="lg:col-span-5 bg-cream-50 p-5 sm:p-8 rounded-3xl border border-cream-300 shadow-artisan space-y-8">
           <div className="space-y-3">
             <h2 className="font-serif text-2xl font-bold text-chocolate-900">
               Direct Contact
@@ -93,7 +93,7 @@ export const ContactPage: React.FC = () => {
         </div>
 
         {/* Right Column: Interactive Form */}
-        <div className="lg:col-span-7 bg-cream-50 p-8 sm:p-10 rounded-3xl border border-cream-300 shadow-artisan">
+        <div className="lg:col-span-7 bg-cream-50 p-5 sm:p-10 rounded-3xl border border-cream-300 shadow-artisan">
           <h2 className="font-serif text-2xl font-bold text-chocolate-900 mb-6">
             Send an Online Message
           </h2>

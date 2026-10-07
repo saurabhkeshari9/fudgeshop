@@ -28,13 +28,13 @@ export const CartDrawer: React.FC = () => {
         onClick={() => setIsDrawerOpen(false)}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-cream-50 shadow-2xl flex flex-col border-l border-cream-300">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+        <div className="w-screen max-w-full sm:max-w-md bg-cream-50 shadow-2xl flex flex-col border-l border-cream-300">
           {/* Header */}
-          <div className="p-5 border-b border-cream-200 flex items-center justify-between bg-cream-100">
+          <div className="p-4 sm:p-5 border-b border-cream-200 flex items-center justify-between bg-cream-100">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-caramel-700" />
-              <h2 className="font-serif text-xl font-bold text-chocolate-900">
+              <h2 className="font-serif text-lg sm:text-xl font-bold text-chocolate-900">
                 Your Basket ({totalItems})
               </h2>
             </div>
@@ -48,15 +48,15 @@ export const CartDrawer: React.FC = () => {
           </div>
 
           {/* Free Shipping Progress Indicator */}
-          <div className="px-5 py-3.5 bg-cream-200/70 border-b border-cream-300/80">
-            <div className="flex items-center justify-between text-xs font-semibold text-chocolate-800 mb-1.5">
-              <span className="flex items-center gap-1.5">
-                <Truck className="w-4 h-4 text-caramel-700" />
+          <div className="px-4 sm:px-5 py-3 bg-cream-200/70 border-b border-cream-300/80">
+            <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-chocolate-800 mb-1.5">
+              <span className="flex items-center gap-1.5 line-clamp-1">
+                <Truck className="w-4 h-4 text-caramel-700 flex-shrink-0" />
                 {amountUntilFreeShipping === 0
-                  ? '🎉 Congratulations! You have unlocked Free Shipping!'
-                  : `Add $${amountUntilFreeShipping.toFixed(2)} more for Free Express Delivery`}
+                  ? '🎉 Free Shipping Unlocked!'
+                  : `Add $${amountUntilFreeShipping.toFixed(2)} for Free Shipping`}
               </span>
-              <span>{freeShippingProgress}%</span>
+              <span className="flex-shrink-0 font-bold ml-1">{freeShippingProgress}%</span>
             </div>
             <div className="w-full bg-cream-300/80 rounded-full h-2 overflow-hidden">
               <div
@@ -159,22 +159,22 @@ export const CartDrawer: React.FC = () => {
                 Shipping and GST calculated at checkout. Orders dispatched from Hahndorf SA.
               </p>
 
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 pt-2">
                 <Link
                   to="/cart"
                   onClick={() => setIsDrawerOpen(false)}
-                  className="py-3 px-4 border border-chocolate-800 text-chocolate-900 hover:bg-cream-200 text-center text-sm font-semibold rounded-xl transition"
+                  className="py-2.5 sm:py-3 px-2 sm:px-4 border border-chocolate-800 text-chocolate-900 hover:bg-cream-200 text-center text-xs sm:text-sm font-semibold rounded-xl transition"
                 >
-                  View Full Cart
+                  View Cart
                 </Link>
 
                 <Link
                   to="/checkout"
                   onClick={() => setIsDrawerOpen(false)}
-                  className="py-3 px-4 bg-chocolate-900 hover:bg-caramel-700 text-cream-50 text-center text-sm font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition"
+                  className="py-2.5 sm:py-3 px-2 sm:px-4 bg-chocolate-900 hover:bg-caramel-700 text-cream-50 text-center text-xs sm:text-sm font-semibold rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition"
                 >
                   <span>Checkout</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </Link>
               </div>
             </div>

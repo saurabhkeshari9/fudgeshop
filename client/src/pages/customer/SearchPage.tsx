@@ -66,18 +66,18 @@ export const SearchPage: React.FC = () => {
         </h1>
 
         {/* Search Input Box */}
-        <form onSubmit={handleSearch} className="relative flex items-center max-w-xl mx-auto">
+        <form onSubmit={handleSearch} className="relative flex items-center max-w-xl mx-auto w-full">
           <input
             type="text"
-            placeholder="Search by flavour, ingredient, or treat name..."
+            placeholder="Search by flavour, treat name..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full pl-12 pr-28 py-4 bg-cream-50 border-2 border-cream-300 rounded-2xl text-chocolate-950 placeholder:text-chocolate-400 text-base shadow-artisan focus:outline-none focus:border-caramel-500"
+            className="w-full pl-10 sm:pl-12 pr-20 sm:pr-28 py-3 sm:py-4 bg-cream-50 border-2 border-cream-300 rounded-xl sm:rounded-2xl text-chocolate-950 placeholder:text-chocolate-400 text-sm sm:text-base shadow-artisan focus:outline-none focus:border-caramel-500"
           />
-          <Search className="w-5 h-5 text-chocolate-400 absolute left-4" />
+          <Search className="w-4 h-4 sm:w-5 sm:h-5 text-chocolate-400 absolute left-3.5 sm:left-4" />
           <button
             type="submit"
-            className="absolute right-2 px-6 py-2.5 bg-chocolate-900 text-cream-50 font-bold text-sm rounded-xl hover:bg-caramel-700 transition"
+            className="absolute right-1.5 sm:right-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-chocolate-900 text-cream-50 font-bold text-xs sm:text-sm rounded-lg sm:rounded-xl hover:bg-caramel-700 transition"
           >
             Search
           </button>

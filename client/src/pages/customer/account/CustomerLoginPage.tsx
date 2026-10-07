@@ -40,8 +40,8 @@ export const CustomerLoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[75vh] flex items-center justify-center px-4 py-12 bg-cream-100/50">
-      <div className="w-full max-w-md bg-cream-50 p-8 sm:p-10 rounded-3xl border border-cream-300 shadow-artisan-lg space-y-6">
+    <div className="min-h-[75vh] flex items-center justify-center px-4 py-8 sm:py-12 bg-cream-100/50">
+      <div className="w-full max-w-md bg-cream-50 p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-cream-300 shadow-artisan-lg space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
           <div className="inline-flex p-3 rounded-2xl bg-cream-200 text-chocolate-900 mb-1">
