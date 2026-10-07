@@ -90,9 +90,11 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-caramel-100 text-caramel-800 text-[11px] sm:text-xs font-bold uppercase tracking-wider border border-caramel-300">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:py-1.5 rounded-full bg-caramel-100 text-caramel-800 text-[10px] sm:text-xs font-bold uppercase tracking-wider border border-caramel-300 max-w-full">
                 <Sparkles className="w-3.5 h-3.5 text-caramel-600 flex-shrink-0" />
-                <span className="truncate">{content?.hero?.badgeText || 'Artisan Confectioners of the Adelaide Hills'}</span>
+                <span className="text-left sm:text-center leading-tight">
+                  {content?.hero?.badgeText || 'Artisan Confectioners of the Adelaide Hills'}
+                </span>
               </div>
 
               <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-chocolate-950 leading-[1.18] sm:leading-[1.15]">
@@ -251,7 +253,7 @@ export const HomePage: React.FC = () => {
               <span>Adelaide Hills Gift Boxes & Hampers</span>
             </div>
 
-            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight text-cream-50">
               The Gift of Hand-Made Happiness
             </h2>
 

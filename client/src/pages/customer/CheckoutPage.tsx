@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   Store,
   UserCheck,
+  User,
 } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
@@ -201,15 +202,20 @@ export const CheckoutPage: React.FC = () => {
           </Link>
         </div>
       ) : (
-        <div className="bg-cream-100 border border-cream-300 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
-          <div className="text-xs text-chocolate-700">
-            <span className="font-bold text-chocolate-950">Have an artisan customer account? </span>
-            Sign in for instant address autofill and to track order fulfillment in real time.
+        <div className="bg-caramel-50/80 border border-caramel-200/90 rounded-2xl p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+          <div className="flex items-start sm:items-center gap-2.5">
+            <div className="p-1.5 rounded-lg bg-caramel-100 text-caramel-800 flex-shrink-0 mt-0.5 sm:mt-0">
+              <User className="w-4 h-4" />
+            </div>
+            <div className="text-xs text-chocolate-800 leading-relaxed">
+              <span className="font-bold text-chocolate-950">Have an artisan account? </span>
+              Sign in for instant address autofill and real-time order tracking.
+            </div>
           </div>
           <Link
             to="/account/login"
             state={{ from: { pathname: '/checkout' } }}
-            className="px-4 py-2 bg-chocolate-900 text-cream-50 text-xs font-bold rounded-xl hover:bg-caramel-700 transition flex-shrink-0 text-center"
+            className="px-4 py-2 bg-cream-50 hover:bg-cream-100 text-chocolate-900 text-xs font-bold rounded-xl border border-caramel-300 hover:border-caramel-400 transition flex-shrink-0 text-center shadow-xs"
           >
             Sign In to Account
           </Link>

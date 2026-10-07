@@ -24,6 +24,7 @@ export const Navbar: React.FC = () => {
   const { totalItems, setIsDrawerOpen } = useCart();
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileCollectionsOpen, setMobileCollectionsOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
   const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
@@ -37,8 +38,9 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Close mobile menu and search on route change
+    // Close mobile menu, collections, and search on route change
     setMobileMenuOpen(false);
+    setMobileCollectionsOpen(false);
     setSearchOpen(false);
     setCategoriesDropdownOpen(false);
   }, [location.pathname]);
@@ -367,21 +369,48 @@ export const Navbar: React.FC = () => {
             Shop All Treats
           </Link>
 
-          <div className="py-2 border-b border-cream-200">
-            <div className="text-[11px] font-bold uppercase tracking-wider text-caramel-700 mb-2">
-              Collections
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pl-1">
-              {categories.map((c) => (
+          {/* Collapsible Collections Accordion */}
+          <div className="border-b border-cream-200">
+            <button
+              type="button"
+              onClick={() => setMobileCollectionsOpen(!mobileCollectionsOpen)}
+              className="w-full flex items-center justify-between py-2.5 text-sm sm:text-base font-semibold text-chocolate-900 transition hover:text-caramel-700"
+            >
+              <div className="flex items-center gap-2">
+                <span>Collections</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-caramel-100 text-caramel-800 border border-caramel-200">
+                  {categories.length}
+                </span>
+              </div>
+              <ChevronDown
+                className={`w-4 h-4 text-caramel-700 transition-transform duration-200 ${
+                  mobileCollectionsOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+
+            {mobileCollectionsOpen && (
+              <div className="pb-3 pl-2 pr-1 space-y-1 bg-cream-100/60 rounded-xl mb-2 p-2 border border-cream-200 animate-fadeIn">
                 <Link
-                  key={c._id}
-                  to={`/shop/${c.slug}`}
-                  className="text-xs sm:text-sm text-chocolate-700 hover:text-caramel-700 py-1 truncate block"
+                  to="/shop"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-xs sm:text-sm font-semibold text-caramel-800 hover:text-caramel-900 py-1.5 px-2 rounded-lg hover:bg-cream-200 block transition"
                 >
-                  • {c.name}
+                  View All Artisan Treats →
                 </Link>
-              ))}
-            </div>
+                {categories.map((c) => (
+                  <Link
+                    key={c._id}
+                    to={`/shop/${c.slug}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs sm:text-sm text-chocolate-700 hover:text-chocolate-950 hover:bg-cream-200 py-1.5 px-2 rounded-lg flex items-center gap-2 transition"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-caramel-600 flex-shrink-0" />
+                    <span className="truncate">{c.name}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
 
           <Link
